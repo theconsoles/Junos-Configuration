@@ -1,0 +1,5 @@
+set policy-options policy-statement policy.name term DEFAULT from route-filter 0.0.0.0/0 exact
+set policy-options policy-statement policy.name term DEFAULT then accept
+set policy-options policy-statement policy.name term REJECT then reject
+set routing-options static route 0.0.0.0/0 discard
+set protocols bgp group BGP.NAME export policy.name
