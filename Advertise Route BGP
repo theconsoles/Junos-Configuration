@@ -1,0 +1,4 @@
+set policy-options policy-statement policy.name term LOCAL-AGGREGATE from protocol static
+set policy-options policy-statement policy.name term LOCAL-AGGREGATE from route-filter x.x.x.x/24 exact
+set routing-options static route x.x.x.x/24 discard
+set protocols bgp group BGP.NAME export policy.name
