@@ -1,0 +1,10 @@
+set security policies from-zone untrust to-zone trust policy default-permit match source-address any
+set security policies from-zone untrust to-zone trust policy default-permit match destination-address any
+set security policies from-zone untrust to-zone trust policy default-permit match application any
+set security policies from-zone untrust to-zone trust policy default-permit then permit
+set security nat source rule-set NAT-SOURCE from zone trust 
+set security nat source rule-set NAT-SOURCE to zone untrust 
+set security nat source rule-set NAT-SOURCE rule NAT-PAT match source-address 0.0.0.0/0 
+set security nat source rule-set NAT-SOURCE rule NAT-PAT match destination-address 0.0.0.0/0 
+set security nat source rule-set NAT-SOURCE rule NAT-PAT then source-nat interface 
+set routing-options static route 0.0.0.0/0 next-hop ip-public
