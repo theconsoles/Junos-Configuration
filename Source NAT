@@ -1,3 +1,5 @@
+set security zones security-zone trust interfaces interface-lan
+set security zones security-zone untrust interfaces interface-internet
 set security policies from-zone untrust to-zone trust policy default-permit match source-address any
 set security policies from-zone untrust to-zone trust policy default-permit match destination-address any
 set security policies from-zone untrust to-zone trust policy default-permit match application any
