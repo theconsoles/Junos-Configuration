@@ -1,0 +1,2 @@
+set applications application port-number protocol tcp
+set applications application port-number destination-port port-number
